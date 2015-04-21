@@ -87,7 +87,14 @@ function stringifyFileContents(format, file, cb) {
 			contents: contents
 		});
 	} else {
-		csvStringify(file.contents, cb);
+		csvStringify(file.contents, function(err, csv) {
+			if(err) return cb(err);
+
+			cb(null, {
+				name: file.name,
+				contents: csv
+			});
+		});
 	}
 }
 
