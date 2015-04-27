@@ -1,4 +1,4 @@
-var zip = new require('node-zip');
+var zip = require('node-zip');
 
 var xlsxToRowSheets = require('xlsx-to-row-sheets');
 
